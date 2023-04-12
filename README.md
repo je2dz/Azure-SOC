@@ -21,7 +21,7 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 <br />
 
 ## Architecture After Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/xVXT2E1.png)
+![Architecture Diagram](https://i.imgur.com/l91mgkr.png)
 
 The architecture of the mini honeynet in Azure consists of the following components:
 
@@ -74,10 +74,9 @@ Stop Time 2023-04-10 09:45 EST
 
 ## Attack Maps AFTER Hardening / Security Controls
 
+![NSG Allowed Inbound Malicious Flows](https://i.imgur.com/BP8DuH3l.png)
 
-
-
-```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
+```The remaining map queries returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
 
 <br />
 
@@ -106,6 +105,9 @@ Stop Time	2023-04-11 11:00 EST
 | SecurityAlert (Microsoft Defender for Cloud)    | -100%
 | SecurityIncident (Sentinel Incidents)           | -95.25%
 | NSG Inbound Malicious Flows Allowed             | -92.89%
+
+![48 Hour Improvement](https://i.imgur.com/eUzTyCD.png)
+
 
 <br />
 
