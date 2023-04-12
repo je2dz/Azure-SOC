@@ -137,5 +137,6 @@ While the environment was configured for vulnerabilities, I ran several PowerShe
 - Malware Detection (EICAR Test File) 
 - Privilege Escation  
 
+![NIST 800-61 Life Cycle](https://i.imgur.com/6PTG7c0.png)
 
 
