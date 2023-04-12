@@ -127,7 +127,7 @@ It is worth noting that if the resources within the network were heavily utilize
 
 <br />
 
-## Addendum
+## Incident Life Cycle Fix This
 
 While the environment was configured for vulnerabilities, I ran several PowerShell scripts to simulate specific attacks. The results were observed in Log Analytics Workspace and Sentinel Incident Creation.
 
