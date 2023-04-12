@@ -1,39 +1,50 @@
-# Building a SOC + Honeynet in Azure (Live Traffic)
-![Cloud Honeynet / SOC](https://i.imgur.com/jFMrONH.png)
-
-<br />
+# Creating a SOC & Honeynet within Microsoft Azure
 
 ## Introduction
 
-In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
+For this project I utilized Microsoft Azure to create a honeynet and ingest logs from various resources into a Log Analytics workspace. From there, I used Microsoft Sentinel to create attack maps, trigger alerts, and incidents.  I then gathered metrics over a 24-hour period in the insecure environment. From there I applied security controls to harden the environment and repeated the 24-hour period to gather more metrics in the secured environment. I then used the metrics to geographically map the attacker’s locations and summarize the overall improvement after applying security controls. 
+
+<br />
+
+## Metrics Gathered
 
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
 - SecurityAlert (Log Analytics Alerts Triggered)
-- SecurityIncident (Incidents created by Sentinel)
+- SecurityIncident (Incidents Created by Sentinel)
 - AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
+
+<br />
+
+## Architecture of the Lab
+
+![Cloud Honeynet / SOC](https://i.imgur.com/jFMrONH.png)
+### Azure Components & Technologies Utilized:
+
+- Virtual Network (VNet)
+- Network Security Group (NSG)
+- Virtual Machines (2 Windows, 1 Linux) 
+- Log Analytics Workspace with KQL Queries
+- Azure Key Vault
+- Azure Storage Account
+- Microsoft Sentinel
+- Microsoft Defender for the Cloud
+- Windows Remote Desktop
+- Windows Command Line Interface
+- 
+
 
 <br />
 
 ## Architecture Before Hardening / Security Controls
 ![Architecture Diagram](https://i.imgur.com/x6UdJrr.png)
 
+For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
+
 <br />
 
 ## Architecture After Hardening / Security Controls
 ![Architecture Diagram](https://i.imgur.com/l91mgkr.png)
-
-The architecture of the mini honeynet in Azure consists of the following components:
-
-- Virtual Network (VNet)
-- Network Security Group (NSG)
-- Virtual Machines (2 windows, 1 linux)
-- Log Analytics Workspace
-- Azure Key Vault
-- Azure Storage Account
-- Microsoft Sentinel
-
-For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
 
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
@@ -59,8 +70,8 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 ## Metrics Before Hardening / Security Controls
 
 The following table shows the metrics we measured in our insecure environment for 24 hours:
-Start Time 2023-04-09 09:45 EST
-Stop Time 2023-04-10 09:45 EST
+Start Time 2023-04-09 09:45 AM EST
+Stop Time 2023-04-10 09:45 AM EST
 
 | Metric                                          | Count
 | ----------------------------------------------- | -----
@@ -83,8 +94,8 @@ Stop Time 2023-04-10 09:45 EST
 ## Metrics After Hardening / Security Controls
 
 The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
-Start Time 2023-04-10 11:00 EST
-Stop Time	2023-04-11 11:00 EST
+Start Time 2023-04-10 09:45 AM EST
+Stop Time	2023-04-11 09:45 AM EST
 
 | Metric                                          | Count
 | ----------------------------------------------- | -----
