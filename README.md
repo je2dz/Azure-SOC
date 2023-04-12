@@ -1,4 +1,4 @@
-# Creating a SOC & Honeynet within Microsoft Azure
+# Creating a SOC with Honeynet within Microsoft Azure
 
 ## Introduction
 
@@ -31,7 +31,6 @@ For this project I utilized Microsoft Azure to create a honeynet and ingest logs
 - Microsoft Defender for the Cloud
 - Windows Remote Desktop
 - Windows Command Line Interface
-- 
 
 
 <br />
@@ -39,14 +38,14 @@ For this project I utilized Microsoft Azure to create a honeynet and ingest logs
 ## Architecture Before Hardening / Security Controls
 ![Architecture Diagram](https://i.imgur.com/x6UdJrr.png)
 
-For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
+Initially, all resources were deployed with exposure for the "BEFORE" metrics. The VMs were configured with their NSGs and built-in firewalls set to allow all traffic, and all other resources were also deployed with public endpoints that were visible to the internet. Consequently, Private Endpoints were not utilized.
 
 <br />
 
 ## Architecture After Hardening / Security Controls
 ![Architecture Diagram](https://i.imgur.com/l91mgkr.png)
 
-For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
+To improve the "AFTER" metrics, NSGs were made more secure by prohibiting ALL traffic except for my admin workstation, while all other resources were safegaurded by their own built-in firewalls in addition to Private Endpoints.
 
 <br />
 
@@ -69,41 +68,39 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 
 ## Metrics Before Hardening / Security Controls
 
-The following table shows the metrics we measured in our insecure environment for 24 hours:
-Start Time 2023-04-09 09:45 AM EST
-Stop Time 2023-04-10 09:45 AM EST
+Measured metrics in the insecure environment for 24 hours:
+Start Time 2023-04-09 11:30 AM EST
+Stop Time 2023-04-10 11:30 AM EST
 
 | Metric                                          | Count
 | ----------------------------------------------- | -----
-| SecurityEvents (Windows VMs)                    | 33,456
-| Syslog (Linux VM)                               | 7789
-| SecurityAlert (Microsoft Defender for Cloud)    | 14
+| SecurityEvents (Windows VMs)                    | 34,063
+| Syslog (Linux VM)                               | 7783
+| SecurityAlert (Microsoft Defender for Cloud)    | 12
 | SecurityIncident (Sentinel Incidents)           | 295
-| NSG Inbound Malicious Flows Allowed             | 619
+| NSG Inbound Malicious Flows Allowed             | 624
 
 <br />
 
 ## Attack Maps AFTER Hardening / Security Controls
 
-![NSG Allowed Inbound Malicious Flows](https://i.imgur.com/BP8DuH3l.png)
-
-```The remaining map queries returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
+```There were no results to display for the 24 hour repeat map queries following the hardening of the assets. ```
 
 <br />
 
 ## Metrics After Hardening / Security Controls
 
-The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
-Start Time 2023-04-10 09:45 AM EST
-Stop Time	2023-04-11 09:45 AM EST
+Measured metrics in the secure environment for another 24 hours after applying security controls:
+Start Time 2023-04-10 11:30 AM EST
+Stop Time	2023-04-11 11:30 AM EST
 
 | Metric                                          | Count
 | ----------------------------------------------- | -----
-| SecurityEvents (Windows VMs)                    | 10,519
-| Syslog (Linux VM)                               | 34
+| SecurityEvents (Windows VMs)                    | 11,679
+| Syslog (Linux VM)                               | 33
 | SecurityAlert (Microsoft Defender for Cloud)    | 0
-| SecurityIncident (Sentinel Incidents)           | 14
-| NSG Inbound Malicious Flows Allowed             | 44
+| SecurityIncident (Sentinel Incidents)           | 10
+| NSG Inbound Malicious Flows Allowed             | 30
 
 <br />
 
@@ -111,11 +108,11 @@ Stop Time	2023-04-11 09:45 AM EST
 
 | Metric                                          | Count
 | ----------------------------------------------- | -----
-| SecurityEvents (Windows VMs)                    | -68.56%
-| Syslog (Linux VM)                               | -99.56%
+| SecurityEvents (Windows VMs)                    | -65.71%
+| Syslog (Linux VM)                               | -99.58%
 | SecurityAlert (Microsoft Defender for Cloud)    | -100%
-| SecurityIncident (Sentinel Incidents)           | -95.25%
-| NSG Inbound Malicious Flows Allowed             | -92.89%
+| SecurityIncident (Sentinel Incidents)           | -96.61%
+| NSG Inbound Malicious Flows Allowed             | -95.19%
 
 ![48 Hour Improvement](https://i.imgur.com/eUzTyCD.png)
 
