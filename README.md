@@ -127,15 +127,19 @@ It is worth noting that if the resources within the network were heavily utilize
 
 <br />
 
-## Incident Life Cycle Fix This
+## Simulated Attacks
 
-While the environment was configured for vulnerabilities, I ran several PowerShell scripts to simulate specific attacks. The results were observed in Log Analytics Workspace and Sentinel Incident Creation.
+While the environment was configured for vulnerabilities, I took the opportunity simulate specific attacks via PowerShell scripts. The results were observed in Log Analytics Workspace and Sentinel Incident Creation.  
 
 - Linux Brute Force Attempt 
 - AAD Brute Force Success 
 - Windows Brute Force Success
 - Malware Detection (EICAR Test File) 
-- Privilege Escation  
+- Privilege Escalation  
+
+<br />
+
+## Utilizing NIST 800.61r2 Computer Incident Handling Guide
 
 ![NIST 800-61 Life Cycle](https://i.imgur.com/6PTG7c0.png)
 
