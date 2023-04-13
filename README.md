@@ -2,7 +2,7 @@
 
 ## Introduction
 
-For this project I utilized Microsoft Azure to create a honeynet and ingest logs from various resources into a Log Analytics workspace. From there, I used Microsoft Sentinel to create attack maps, trigger alerts, and incidents.  I then gathered metrics over a 24-hour period in the insecure environment. From there I applied security controls to harden the environment and repeated the 24-hour period to gather more metrics in the secured environment. I then used the metrics to geographically map the attacker’s locations and summarize the overall improvement after applying security controls. In addtion I also conducted a series of simulated attacks against the system.
+For this project, I utilized Microsoft Azure to create a honeynet and ingest logs from various resources into a Log Analytics workspace. From there, I used Microsoft Sentinel to create attack maps, trigger alerts, and incidents.  I then gathered metrics over 24 hours in the insecure environment. From there I applied security controls to harden the environment and repeated the 24 hours to gather more metrics in the secured environment. I then used the metrics to geographically map the attacker’s locations and summarize the overall improvement after applying security controls. In addtionm, I also conducted a series of simulated attacks against the system.
 
 <br />
 
@@ -16,7 +16,7 @@ For this project I utilized Microsoft Azure to create a honeynet and ingest logs
 
 <br />
 
-## Architecture of the Lab
+## The Architecture of the Lab
 
 ![Cloud Honeynet / SOC](https://i.imgur.com/jFMrONH.png)
 ### Technologies, Regulations, and Azure Components Utilized:
@@ -47,7 +47,7 @@ Initially, all resources were deployed with high exposure for the "BEFORE" metri
 ## Architecture After Hardening / Security Controls
 ![Architecture Diagram](https://i.imgur.com/l91mgkr.png)
 
-To improve the "AFTER" metrics, NSGs were made more secure by prohibiting ALL traffic except for my admin workstation, while all other resources were safegaurded by their own built-in firewalls in addition to Private Endpoints.
+To improve the "AFTER" metrics, NSGs were made more secure by prohibiting ALL traffic except for my admin workstation, while all other resources were safeguarded by their built-in firewalls in addition to Private Endpoints.
 
 <br />
 
@@ -94,7 +94,7 @@ The initial 24-hour study revealed that the lab was vulnerable to multiple threa
 
 ## Attack Maps AFTER Hardening / Security Controls
 
-```There were no results to display for the 24 hour repeat map queries following the hardening of the assets. ```
+```There were no results to display for the 24-hour repeat map queries following the hardening of the assets. ```
 
 <br />
 
@@ -130,7 +130,7 @@ Stop Time	2023-04-11 11:30 AM EST
 
 ## Simulated Attacks
 
-I also took the opportunity simulate specific attacks via PowerShell scripts or by manually triggering events. The results were observed in Log Analytics Workspace and Sentinel Incident Creation.  
+I also took the opportunity to simulate specific attacks via PowerShell scripts or by manually triggering events. The results were observed in Log Analytics Workspace and Sentinel Incident Creation.  
 
 - Linux Brute Force Attempt 
 - AAD Brute Force Success 
@@ -144,43 +144,43 @@ I also took the opportunity simulate specific attacks via PowerShell scripts or 
 
 ## Utilizing NIST 800.61r2 Computer Incident Handling Guide
 
-For each simulated attacks I then practiced incident responses following NIST SP 800-61 r2.
+For each simulated attack I then practiced incident responses following NIST SP 800-61 r2.
 
 ![NIST 800.61](https://i.imgur.com/6PTG7c0l.png)
 
-Each organization will have policies related to incident response and should be followed. This event is just a walkthrough for possible actions to take in the detection of malware on a workstation.  
+Each organization will have policies related to an incident response that should be followed. This event is just a walkthrough for possible actions to take in the detection of malware on a workstation.  
 
 #### Preparation
 
-- The Azure lab was setup to ingest all of the logs into Log Analytics Workspace, Sentinel and Defender configured, and alert rules put in place.
+- The Azure lab was set up to ingest all of the logs into Log Analytics Workspace, Sentinel and Defender were configured, and alert rules were put in place.
 
 #### Detection & Analysis
 
 - Malware has been detected on a workstation with the potential to compromise the confidentiality, integrity, or availability of the system and data.
 - Assigned alert to an owner, set the severity to "High", and the status to "Active"
 - Identified the primary user account of the system and all systems affected.
-- A full scan of the system was conducted using an up-to-date antivirus software to identify the malware.
+- A full scan of the system was conducted using up-to-date antivirus software to identify the malware.
 - Verified the authenticity of the alert as a "True Positive".
 - Sent notifications to appropriate personnel as required by the organization's communication policies.
 
 #### Containment, Eradication & Recovery
 
 - The infected system and any additional systems infected by the malware were quarantined.
-- If the malware was unable to be removed or the system sustained damage, the system would have been shutdown and disconnected from the network.
-- Depending on organizational policies the affected systems could be restored known clean state, such as a system image or a clean installation of the operating system and applications. Or the an up-to-date anti-virus solution could be used to clean the systems. 
+- If the malware was unable to be removed or the system sustained damage, the system would have been shut down and disconnected from the network.
+- Depending on organizational policies the affected systems could be restored known clean state, such as a system image or a clean installation of the operating system and applications. Or an up-to-date anti-virus solution could be used to clean the systems. 
 
 #### Post-Incident Activity
 
-- In this simulated case an employee had downloaded a game that contained the malware. 
-- All information was gathered and analyzed to determine root cause, extent of damage, and effectivness of the response. 
-- Report diseminated to all stakeholders.
-- Corrective actions implemented to remediate the root cause.
-- And a lessons learned review of the incident was conducted.
+- In this simulated case, an employee had downloaded a game that contained malware. 
+- All information was gathered and analyzed to determine the root cause, extent of damage, and effectiveness of the response. 
+- Report disseminated to all stakeholders.
+- Corrective actions are implemented to remediate the root cause.
+- And a lessons-learned review of the incident was conducted.
 
 <br />
 
 ## Conclusion
 
-In this project I utilized Microsoft Azure to create a honeynet and ingest logs from various resources into a Log Analytics workspace.  Microsoft Sentinel was used to create attack maps, trigger alerts, and incidents.  I then gathered metrics over 48-hours period to display the significance of properly configuring cloud assets with security in mind. By implementing one section of NIST SP 800-53 r4 I was able to drastically reduce the number of security events and incidents. 
+In this project, I utilized Microsoft Azure to create a honeynet and ingest logs from various resources into a Log Analytics workspace.  Microsoft Sentinel was used to create attack maps, trigger alerts, and incidents.  I then gathered metrics over a 48-hours period to display the significance of properly configuring cloud assets with security in mind. By implementing one section of NIST SP 800-53 r4 I was able to drastically reduce the number of security events and incidents. 
 
-Had this simulation been linked to an actual organization there would have been many more avenues of attack to the confidentiality, availability, and integrity of the data of the organization.  
+Had this simulation been linked to an actual organization there would have been many more avenues of attack on the confidentiality, availability, and integrity of the data of the organization.  
