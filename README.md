@@ -2,7 +2,7 @@
 
 ## Introduction
 
-For this project I utilized Microsoft Azure to create a honeynet and ingest logs from various resources into a Log Analytics workspace. From there, I used Microsoft Sentinel to create attack maps, trigger alerts, and incidents.  I then gathered metrics over a 24-hour period in the insecure environment. From there I applied security controls to harden the environment and repeated the 24-hour period to gather more metrics in the secured environment. I then used the metrics to geographically map the attacker’s locations and summarize the overall improvement after applying security controls. 
+For this project I utilized Microsoft Azure to create a honeynet and ingest logs from various resources into a Log Analytics workspace. From there, I used Microsoft Sentinel to create attack maps, trigger alerts, and incidents.  I then gathered metrics over a 24-hour period in the insecure environment. From there I applied security controls to harden the environment and repeated the 24-hour period to gather more metrics in the secured environment. I then used the metrics to geographically map the attacker’s locations and summarize the overall improvement after applying security controls. In addtion I also conducted a series of simulated attacks against the system.
 
 <br />
 
@@ -40,7 +40,7 @@ For this project I utilized Microsoft Azure to create a honeynet and ingest logs
 ## Architecture Before Hardening / Security Controls
 ![Architecture Diagram](https://i.imgur.com/x6UdJrr.png)
 
-Initially, all resources were deployed with exposure for the "BEFORE" metrics. The VMs were configured with their NSGs and built-in firewalls set to allow all traffic, and all other resources were also deployed with public endpoints that were visible to the internet. Consequently, Private Endpoints were not utilized.
+Initially, all resources were deployed with high exposure for the "BEFORE" metrics. The VMs were configured with their NSGs and built-in firewalls set to allow all traffic, and all other resources were also deployed with public endpoints that were visible to the internet. Consequently, Private Endpoints were not utilized.
 
 <br />
 
@@ -130,7 +130,7 @@ Stop Time	2023-04-11 11:30 AM EST
 
 ## Simulated Attacks
 
-While the environment was configured for vulnerabilities, I took the opportunity simulate specific attacks via PowerShell scripts or by manually triggering. The results were observed in Log Analytics Workspace and Sentinel Incident Creation.  
+I also took the opportunity simulate specific attacks via PowerShell scripts or by manually triggering events. The results were observed in Log Analytics Workspace and Sentinel Incident Creation.  
 
 - Linux Brute Force Attempt 
 - AAD Brute Force Success 
@@ -144,11 +144,11 @@ While the environment was configured for vulnerabilities, I took the opportunity
 
 ## Utilizing NIST 800.61r2 Computer Incident Handling Guide
 
-For each simulated attack I then practiced incident responses following NIST SP 800-61 r2.
+For each simulated attacks I then practiced incident responses following NIST SP 800-61 r2.
 
 ![NIST 800.61](https://i.imgur.com/6PTG7c0l.png)
 
-One such event was the detection of malware on a workstation. Each organization will have policies related to incident response and should be followed. 
+Each organization will have policies related to incident response and should be followed. This event is just a walkthrough for possible actions to take in the detection of malware on a workstation.  
 
 #### Preparation
 
