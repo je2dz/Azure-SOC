@@ -138,7 +138,7 @@ It is worth noting that if the resources within the network were heavily utilize
 
 ## Simulated Attacks
 
-While the environment was configured for vulnerabilities, I took the opportunity simulate specific attacks via PowerShell scripts or manually triggering. The results were observed in Log Analytics Workspace and Sentinel Incident Creation.  
+While the environment was configured for vulnerabilities, I took the opportunity simulate specific attacks via PowerShell scripts or by manually triggering. The results were observed in Log Analytics Workspace and Sentinel Incident Creation.  
 
 - Linux Brute Force Attempt 
 - AAD Brute Force Success 
@@ -146,17 +146,33 @@ While the environment was configured for vulnerabilities, I took the opportunity
 - Malware Detection (EICAR Test File) 
 - Privilege Escalation  
 
+![Attacker](https://i.imgur.com/CpoVQw7l.png)
+
 <br />
 
 ## Utilizing NIST 800.61r2 Computer Incident Handling Guide
 
-<p align="center">
-  <img src="https://i.imgur.com/6PTG7c0l.png" />
-</p>
+For each simulated attack I then practiced incident responses following NIST SP 800-61 r2.
 
+![NIST 800.61](https://i.imgur.com/6PTG7c0l.png)
 
+One such event was the detection of malware on a workstation. Each organization will have policies related to incident response and should be followed. 
 
-<p align="center"> 
-  <img src="https://i.imgur.com/CpoVQw7l.png" />
-</p>
+#### Incident Description
+
+- Malware has been detected on a workstation with the potential to compromise the confidentiality, integrity, or availability of the system and data. 
+
+#### Initial Repsone Actions
+
+- Verified the authenticity of the report.
+- Identified the primary user account of the system: attacker
+- Sent notifications to any affected stackholders, users, or customers as appropriate.
+- A full scan of the system was conducted using an up-to-date antivirus software to identify the and remove the malware.
+- If the malware was unable to be removed or the system sustained damage, the system would have been shutdown and disconnected from the network.
+
+#### Containment & Recovery
+- The infected system and any additional systems infected by the malware were quarantined.
+- 
+
+#### Document Findings & Close out incdient
 
