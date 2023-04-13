@@ -158,21 +158,27 @@ For each simulated attack I then practiced incident responses following NIST SP 
 
 One such event was the detection of malware on a workstation. Each organization will have policies related to incident response and should be followed. 
 
-#### Incident Description
+#### Preparation
 
-- Malware has been detected on a workstation with the potential to compromise the confidentiality, integrity, or availability of the system and data. 
+- The Azure lab was setup to ingest all of the logs into Log Analytics Workspace, Sentinel and Defender configured, and alert rules put in place.
 
-#### Initial Repsone Actions
+#### Detection & Analysis
 
-- Verified the authenticity of the report.
-- Identified the primary user account of the system: attacker
-- Sent notifications to any affected stackholders, users, or customers as appropriate.
-- A full scan of the system was conducted using an up-to-date antivirus software to identify the and remove the malware.
-- If the malware was unable to be removed or the system sustained damage, the system would have been shutdown and disconnected from the network.
+- Malware has been detected on a workstation with the potential to compromise the confidentiality, integrity, or availability of the system and data.
+- Assigned alert to an owner, set the severity to "High", and the status to "Active"
+- Identified the primary user account of the system and all systems affected.
+- A full scan of the system was conducted using an up-to-date antivirus software to identify the malware.
+- Verified the authenticity of the alert as a "True Positive".
+- Sent notifications to appropriate personnel as required by the organization's communication policies.
 
-#### Containment & Recovery
+#### Containment, Eradication & Recovery
+
 - The infected system and any additional systems infected by the malware were quarantined.
-- 
+- If the malware was unable to be removed or the system sustained damage, the system would have been shutdown and disconnected from the network.
+- Depending on organizational policies the affected systems could be restored known clean state, such as a system image or a clean installation of the operating system and applications. Or the an up-to-date anti-virus solution could be used to clean the systems. 
 
-#### Document Findings & Close out incdient
+#### Post-Incident Activity
+
+- In this simulated case an employee had downloaded a game that contained the malware. 
+- 
 
