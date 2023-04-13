@@ -183,4 +183,4 @@ Each organization will have policies related to an incident response that should
 
 In this project, I utilized Microsoft Azure to create a honeynet and ingest logs from various resources into a Log Analytics workspace.  Microsoft Sentinel was used to create attack maps, trigger alerts, and incidents.  I then gathered metrics over a 48-hour period to display the significance of properly configuring cloud assets with security in mind. By implementing one section of NIST SP 800-53 r4 I was able to drastically reduce the number of security events and incidents. 
 
-Had this simulation been linked to an actual organization there would have been many more avenues of attack on the confidentiality, availability, and integrity of the data of the organization.  
+Had this simulation been linked to an actual organization there would have been many more avenues of attack on the confidentiality, availability, and integrity of the organization's assests.
