@@ -191,4 +191,4 @@ Had this simulation been linked to an actual organization there would have been 
 
 This project was based on a course developed by Josh Madakor and can be found here: [leveld](https://www.leveldcareers.com/cyber-security-course)
 
-Josh also produces a lot of great content on YouTube at: [Josh Madakor] (https://www.youtube.com/@JoshMadakor)
+Josh also produces a lot of great content on YouTube at: [Josh Madakor](https://www.youtube.com/@JoshMadakor)
