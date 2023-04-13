@@ -88,8 +88,8 @@ Stop Time 2023-04-10 11:30 AM EST
 
 The initial 24-hour study revealed that the lab was vulnerable to multiple threats due to its visibility on the public internet. To address these findings, I activated NIST SP 800-53 r4 within the compliance section of Microsoft Defender and focused on fulfilling the compliance standards associated with SC.7.*. Additional assessments for SC-7 - Boundary Protection.
 
-![Boundary Protection](https://i.imgur.com/Ac5PNYQ.jpg)
-
+![Hardening](https://i.imgur.com/Ac5PNYQl.jpg)
+       
 <br />
 
 ## Attack Maps AFTER Hardening / Security Controls
@@ -124,8 +124,7 @@ Stop Time	2023-04-11 11:30 AM EST
 | SecurityIncident (Sentinel Incidents)           | -96.61%
 | NSG Inbound Malicious Flows Allowed             | -95.19%
 
-![48 Hour Improvement](https://i.imgur.com/eUzTyCD.png)
-
+![48 Hour Improvement](https://i.imgur.com/eUzTyCDl.png)
 
 <br />
 
@@ -139,7 +138,7 @@ It is worth noting that if the resources within the network were heavily utilize
 
 ## Simulated Attacks
 
-While the environment was configured for vulnerabilities, I took the opportunity simulate specific attacks via PowerShell scripts. The results were observed in Log Analytics Workspace and Sentinel Incident Creation.  
+While the environment was configured for vulnerabilities, I took the opportunity simulate specific attacks via PowerShell scripts or manually triggering. The results were observed in Log Analytics Workspace and Sentinel Incident Creation.  
 
 - Linux Brute Force Attempt 
 - AAD Brute Force Success 
@@ -151,6 +150,13 @@ While the environment was configured for vulnerabilities, I took the opportunity
 
 ## Utilizing NIST 800.61r2 Computer Incident Handling Guide
 
-![NIST 800-61 Life Cycle](https://i.imgur.com/6PTG7c0.png)
+<p align="center">
+  <img src="https://i.imgur.com/6PTG7c0l.png" />
+</p>
 
+
+
+<p align="center"> 
+  <img src="https://i.imgur.com/CpoVQw7l.png" />
+</p>
 
