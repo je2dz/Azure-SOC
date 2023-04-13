@@ -2,7 +2,7 @@
 
 ## Introduction
 
-For this project, I utilized Microsoft Azure to create a honeynet and ingest logs from various resources into a Log Analytics workspace. From there, I used Microsoft Sentinel to create attack maps, trigger alerts, and incidents.  I then gathered metrics over 24 hours in the insecure environment. From there I applied security controls to harden the environment and repeated the 24 hours to gather more metrics in the secured environment. I then used the metrics to geographically map the attacker’s locations and summarize the overall improvement after applying security controls. In addtionm, I also conducted a series of simulated attacks against the system.
+For this project, I utilized Microsoft Azure to create a honeynet and ingest logs from various resources into a Log Analytics workspace. From there, I used Microsoft Sentinel to create attack maps, trigger alerts, and incidents.  I then gathered metrics over 24 hours in the insecure environment. From there I applied security controls to harden the environment and repeated the 24 hours to gather more metrics in the secured environment. I then used the metrics to geographically map the attacker’s locations and summarize the overall improvement after applying security controls. In addition, I also conducted a series of simulated attacks against the system.
 
 <br />
 
