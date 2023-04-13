@@ -19,7 +19,7 @@ For this project I utilized Microsoft Azure to create a honeynet and ingest logs
 ## Architecture of the Lab
 
 ![Cloud Honeynet / SOC](https://i.imgur.com/jFMrONH.png)
-### Azure Components & Technologies Utilized:
+### Technologies, Regulations, and Azure Components Utilized:
 
 - Virtual Network (VNet)
 - Network Security Group (NSG)
@@ -32,6 +32,8 @@ For this project I utilized Microsoft Azure to create a honeynet and ingest logs
 - Windows Remote Desktop
 - Command Line Interface
 - PowerShell
+- NIST SP 800-53 r4
+- NIST SP 800-61 r2
 
 <br />
 
@@ -79,6 +81,14 @@ Stop Time 2023-04-10 11:30 AM EST
 | SecurityAlert (Microsoft Defender for Cloud)    | 12
 | SecurityIncident (Sentinel Incidents)           | 295
 | NSG Inbound Malicious Flows Allowed             | 624
+
+<br />
+
+## Hardening Steps
+
+The initial 24-hour study revealed that the lab was vulnerable to multiple threats due to its visibility on the public internet. To address these findings, I activated NIST SP 800-53 r4 within the compliance section of Microsoft Defender and focused on fulfilling the compliance standards associated with SC.7.*. Additional assessments for SC-7 - Boundary Protection.
+
+![Boundary Protection](https://i.imgur.com/Ac5PNYQ.jpg)
 
 <br />
 
